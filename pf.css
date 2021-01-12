@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
 .theme-light {
   --primary: #6200ee;
   --secondary: #03dac6;
-  --background: #f0f0f0;
+  --background: #ededed;
   --text-color: #000000;
 }
 .theme-dark {
@@ -165,7 +165,7 @@ span {
   background: linear-gradient(45deg, var(--secondary), var(--primary));
   border-radius: 40px;
   box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.4), 5px 5px 10px rgba(0, 0, 0, 0.4);
-  border: 1px solid #333;
+  border: 1px solid var(--text-color);
   margin: 0 0 0 100px;
   display: flex;
   flex-direction: column;
