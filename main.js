@@ -41,6 +41,7 @@ toggle.addEventListener('input', e => {
 });
 
 if (localStorage.getItem('theme') === 'dark') {
+    document.getElementById('toggle').checked = true;
     document.documentElement.className = 'theme-dark';
 } else if (localStorage.getItem('theme') === 'light') {
     document.documentElement.className = 'theme-light';
