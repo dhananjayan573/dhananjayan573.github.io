@@ -28,14 +28,22 @@ form.addEventListener('submit', e => {
 })
 
 const toggle = document.getElementById('toggle');
-const body = document.body;
 
 toggle.addEventListener('input', e => {
     const isChecked = e.target.checked;
     if (isChecked) {
         document.documentElement.className = 'theme-dark';
+        localStorage.setItem('theme','dark');
     } else {
         document.documentElement.className = 'theme-light';
+        localStorage.setItem('theme','light');
     }
 });
+
+if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.className = 'theme-dark';
+} else if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.className = 'theme-light';
+}
+
 
