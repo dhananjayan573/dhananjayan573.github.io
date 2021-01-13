@@ -129,8 +129,11 @@ nav #icon {
   width: 50%;
   height: 100%;
   align-self: flex-end;
-  background: url("blob2.svg"), url("blob.svg");
-  background-size: cover;  
+  background: url("bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 40px; 
+  background-position-x: -40px; 
 }
 .home .image img {
   width: auto;
