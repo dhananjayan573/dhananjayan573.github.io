@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <link rel="stylesheet" href="color.css">
+</head>
+
+<body>
+    <h2>Random Color Generator</h2>
+    <p>Hit Refresh to get new Colors</p>
+    <p>Click on color to copy code</p>
+    <button class="btn" onclick="generatecolor();">Refresh</button>
+    <div class="container"></div>
+
+    <script>
+        for (let i = 0; i < 104; i++) {
+            const box = document.createElement("div");
+            box.classList.add("box");
+            box.id = i;
+            box.onclick = function () {
+                var text = document.getElementById(i).innerText;
+                var elem = document.createElement("textarea");
+                document.body.appendChild(elem);
+                elem.value = text;
+                elem.select();
+                document.execCommand("copy");
+                document.getElementById(i).innerText = "Copied!";
+                document.body.removeChild(elem);
+            }
+            document.querySelector(".container").appendChild(box);
+        }
+        const btn = document.querySelector(".btn");
+        const colorbox = document.querySelectorAll(".box");
+
+        function randomclr() {
+            var chars = "0123456789abcdef";
+            var clrlength = 6;
+            var clr = "";
+
+            for (var i = 0; i < clrlength; i++) {
+                var randomcolor = Math.floor(Math.random() * chars.length);
+                clr += chars.substring(randomcolor, randomcolor + 1);
+            }
+            return "#" + clr;
+        }
+
+        function generatecolor() {
+            colorbox.forEach(e => {
+                var newclr = randomclr();
+                e.style.backgroundColor = newclr;
+                e.innerHTML = newclr;
+            })
+        }
+
+    </script>
+</body>
+
+</html>
