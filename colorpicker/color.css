@@ -8,7 +8,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 ::-webkit-scrollbar {
@@ -37,9 +37,9 @@ p {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    place-items: center;
     width: 95%;
     padding: 50px;
 }
@@ -56,4 +56,12 @@ p {
     cursor: grab;
     text-shadow: 2px 2px 20px #000;
     box-shadow: .5px .5px 5px rgba(0, 0, 0, .5);
+}
+@media (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+        padding: 15px;
+    }
 }

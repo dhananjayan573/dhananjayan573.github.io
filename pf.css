@@ -301,6 +301,7 @@ nav #icon {
   align-items: center;
   flex-direction: column;
 }
+
 .projects a {
   text-decoration: none;
 }
@@ -314,7 +315,6 @@ nav #icon {
   font-size: 1.25em;
   color: var(--text-color);
 }
-
 
 .contact h2 {
   margin: 20px 0 0 30px;
@@ -419,21 +419,26 @@ nav #icon {
 }
 
 @media only screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
   nav ul {
-    margin: 10vh -150vw 0 0;
+    visibility: hidden;
+    margin: 10vh -130px 0 0;
     width: 150px;
     height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--background)6;
+    background: rgba(0, 0, 0, 0.7);
   }
   nav ul.show {
-    margin: 10vh 0 0 0;
+    visibility: visible;
   }
   nav ul li {
-    font-size: 15px;
+    font-size: 20px;
     margin: 30px 0;
   }
   nav #icon {
@@ -446,12 +451,37 @@ nav #icon {
   .container {
     overflow-x: hidden;
   }
-  .about, .edu, .contact {
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .home .head {
+    margin: 0 auto;
+  }
+  .home .image {
+    background: var(--background);
+    margin: 0 300px;
+  }
+  .home h1, span {
+    margin: 20px;
+    font-size: 30px;
+  }
+  .home h3 {
+    margin: 0 45px;
+    font-size: 20px;
+  }
+  .home button {
+    margin: 15px 135px;
+    font-size: 15px;
+  }
+  .about, .edu, .projects, .contact {
     width: 90vw;
     height: 100vh;
   }
-  .about h2, .contact h2 {
-    margin: 100px 0 0 5px;
+  .about h2, .projects h2, .contact h2 {
+    margin: 20px 0 0 5px;
     font-size: 30px;
   }
   .about p {
@@ -459,19 +489,34 @@ nav #icon {
     font-size: 5vw;
   }
   .edu1 {
-    margin: 160px 0 0 10px;
+    margin: 30px auto;
     width: 90vw;
     height: 40vh;
     border-radius: 20px;
     box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.4), 5px 5px 5px rgba(0, 0, 0, 0.4);
   }
+  .edu1 h3 {
+    color: var(--text-color);
+    margin: 10px 0 0 60px;
+    line-height: 8px;
+    font-size: 15px;
+}
+.edu h4 {
+  margin-left: 80px;
+}
   .skills {
-    margin: 30px 0 0 10px;
+    margin: 30px auto;
     width: 90vw;
     height: 40vh;
     border-radius: 20px;
     box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.4), 5px 5px 5px rgba(0, 0, 0, 0.4);
   }
+  .skills h3 {
+    color: var(--text-color);
+    margin: 10px 0 0 60px;
+    line-height: 8px;
+    font-size: 20px;
+}
   .contact .box {
     margin: 10px 5px;
     display: flex;
@@ -540,7 +585,7 @@ nav #icon {
   .left {
     display: none;
   }
-  .about, .edu, .contact {
+  .about, .edu, .projects, .contact {
     margin-left: 30px;
     width: 90vw;
     height: 100vh;
